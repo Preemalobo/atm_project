@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit Money</title>
+</head>
+<body>
+    <h1>Deposit Amount</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="amount" placeholder="Enter amount" required>
+        <button type="submit">Deposit</button>
+    </form>
+
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+</body>
+</html>
